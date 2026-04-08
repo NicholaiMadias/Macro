@@ -1,0 +1,22 @@
+Deployment Manifest: Seven Stars Feature
+1. Repository & Branching
+• Target Repo: NicholaiMadias/Macro
+• Feature Branch: seven-stars-feature
+• Base Branch: main
+2. Directory Structure to be Created
+• /nation/ - Sovereign governance and policy modules.
+• /vision/ - Vision Forge frontend and image processing logic.
+• /diagnostics/ - System health, logging, and performance monitoring.
+• /admin/ - Super Admin hierarchy and management dashboard.
+• /firebase/ - Firestore rules, index definitions, and schema docs.
+3. GitHub Issue Migration
+• Parent Issue: [FEATURE] Implement Seven Stars Framework
+• Sub-tasks:
+• Setup Vision Forge Proxy (OpenAI)
+• Configure Firestore Security Rules (Hierarchy-based)
+• Deploy Diagnostic Monitoring
+• Initialize Nation Governance Logic
+4. Automation & Labels
+• PR Title: feat: integrate Seven Stars core architecture
+• Labels: enhancement, feature, seven-stars, high-priority
+• Assignee: @NicholaiMadias
