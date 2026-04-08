@@ -1,0 +1,36 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+
+        "role": {
+          ".write": "auth != null && root.child('users/' + auth.uid + '/role').val() in ['owner', 'superAdmin']"
+        },
+
+        "tools": {
+          ".write": "auth != null && root.child('users/' + auth.uid + '/role').val() in ['owner', 'superAdmin']"
+        },
+
+        "badges": {
+          "$badgeId": {
+            ".write": "auth != null && auth.uid === $uid && !data.exists()",
+            ".validate": "newData.hasChildren(['name', 'earnedAt']) && newData.child('name').isString() && newData.child('earnedAt').isNumber()"
+          }
+        },
+
+        "donations": {
+          ".write": "auth != null && auth.uid === $uid"
+        },
+
+        "progress": {
+          ".write": "auth != null && auth.uid === $uid"
+        }
+      }
+    },
+
+    "donations": {
+      ".read": "auth != null && root.child('users/' + auth.uid + '/role').val() in ['owner', 'superAdmin', 'admin']"
+    }
+  }
+}
